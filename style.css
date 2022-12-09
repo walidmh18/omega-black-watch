@@ -1,0 +1,362 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat' , sans-serif;
+
+}
+body{
+    height: 100vh;
+}
+a{
+    all: unset;
+    cursor: pointer;
+    color: white;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.background{
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    top: -5%;
+
+}
+.starsPic{
+    position: absolute;
+    width: 100%;
+}
+.moonPic{
+    position: absolute;
+    height: 120%;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+.content{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    z-index: 100000000;
+}
+.verticalNav{
+    height: 90vh;
+    width: 5%;
+    border-right: 1px solid #eee;
+    z-index: 10;
+    margin: 5vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+}
+.verticalNav a{
+    transform: rotate(180deg);
+    width: 100%;
+    height: calc(100vw * 0.05);   
+    display: grid;
+    place-content: center; 
+    writing-mode: vertical-rl;
+    font-weight: 600;
+    transition: 0.3s;
+    position: relative;
+}
+
+.verticalNav a:hover{
+    color: crimson;
+}
+.verticalNav a:hover::after{
+    content: '';
+    width: 4px;
+    height: 30px;
+    background: crimson;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.verticalNav a.active{
+    color:crimson;
+
+}
+.verticalNav a.active::after{
+    content: '';
+    width: 4px;
+    height: 30px;
+    background: crimson;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.body{
+    width: 95%;
+    z-index: 100;
+}
+nav{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;top: 0;
+    z-index: 999;
+    padding: 0 3rem 0 0;
+    
+}
+.search{
+    position: relative;
+    display: inline-block;
+    transition: 0.3s;
+    margin-right: calc(15rem );
+    width: 0;
+}
+
+.search.active{
+    width: 15rem;
+    margin-right: 0;
+}
+.search.active input{
+    padding-left: 2rem;
+    cursor: text;
+}
+
+.search input{
+    width: 100%;
+    height: 100%;
+    background:  none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid #eee;
+    border-radius: 100vmax;
+    color: #eee;
+    transition: 0.3s;
+    cursor: pointer;
+
+}
+
+.search label{
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: crimson;
+    cursor: pointer;
+}
+.icon img{
+    background: crimson;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 1.5rem;
+}
+.navList{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+
+.navListEl{
+    transition: 0.3s;
+    position: relative;
+
+}
+.navListEl:after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: crimson;
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 100vmax;
+    transition: 0.3s;
+}
+.navListEl.active , .navListEl:hover{
+    color: crimson;
+
+}
+.navListEl.active::after , .navListEl:hover::after{
+
+    width: 100%;
+}
+
+
+
+
+
+
+
+.bgTxt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: calc(100% - 8.5rem);
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.darkSideTxt{
+    background-image: url(images/background.png);
+    background-repeat: repeat;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-size: 17vw;
+    display: inline-block;
+    /* position: absolute;
+    left: 50%;
+    top: 50%; */
+    /* transform: translate(-50%, -50%); */
+    width: 100%;
+    filter: drop-shadow(0 0 10px #111);
+    z-index: 1;
+}
+.darkSideTxt1{
+    filter: drop-shadow(0 0 10px #333);
+
+}
+
+
+.description{
+    width: 45%;
+    z-index: 1000;
+}
+.description > p{
+    color: #ccc;
+
+    z-index: 1000;
+}
+.speedMaster{
+    letter-spacing: 3px;
+}
+.description h1{
+    color: white;
+    z-index: 1000;
+    font-size: 3rem;
+}
+.infos{
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    height: calc(100vh );
+    justify-content: center;
+    gap: 0;
+    position: absolute;
+    top: 0;
+}
+
+.description a{
+    color: white;
+    background: crimson;
+    padding: 1rem 1rem 1rem 2rem;
+    display: inline-block;
+    margin-top: 2rem;
+    position: relative;
+    transition: 0.2s ease-in-out;
+    z-index: 1;
+}
+.description a::before{
+    content: '';
+    width: 100%;
+    height: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background: white;
+    transition: 0.2s ease-in-out;
+    z-index: -1;
+}
+.description a:hover{
+    color: crimson;
+
+}
+.description a:hover::before{
+    height: 100%;
+}
+.description a i{
+    transition: 0.2s;
+    margin-right: 1rem;
+    margin-left: 0;
+}
+.description a:hover i{
+    margin-left: 1rem;
+    margin-right: 0;
+}
+.watch{
+    width: 40%;
+    z-index: 10;
+}
+.watch img{
+    width: 90%;
+}
+
+
+
+.components{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1111;
+}
+.watchComponents{
+    display: flex;
+    gap: 3rem;
+    padding: 1rem 4rem;
+    background: #181b2571;
+    backdrop-filter: blur(5px);
+}
+.component img{
+    width: 50px;
+    height: 50px;
+}
+.component{
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+}
+.component div p , .WatchPrice p{
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.component div span , .WatchPrice span{
+    color: white;
+    font-size: 0.7rem;
+}
+.component img, .component span , .WatchPrice span{
+    opacity: 0.4;
+}
+.WatchPrice{
+    position: absolute;
+    right: 5rem;
+    bottom: 11rem;
+}
+.WatchPrice p{
+    margin-top: 5px;
+}
+.nextPiece{
+    position: absolute;
+    bottom: 0;
+    right: 5rem;
+    background: crimson;
+    color: white;
+    padding: 1rem;
+    padding-bottom: 6rem;
+    z-index: -11;
+    cursor: pointer;
+}
+.nextPiece span{
+    font-size: 0.7rem;
+    color: #ddd;
+}
