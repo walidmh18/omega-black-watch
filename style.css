@@ -37,7 +37,6 @@ a{
 .moonPic{
     position: absolute;
     height: 120%;
-    right: -5%;
     top: 0;
     z-index: 1;
 }
