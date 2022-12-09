@@ -25,16 +25,19 @@ a{
     width: 100%;
     z-index: 0;
     top: -5%;
-
+   
 }
+
 .starsPic{
     position: absolute;
-    width: 100%;
+    min-width: 100%;
+    height: 130%;
+    z-index: 1;
 }
 .moonPic{
     position: absolute;
     height: 120%;
-    right: 0;
+    right: -5%;
     top: 0;
     z-index: 1;
 }
